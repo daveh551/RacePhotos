@@ -152,3 +152,9 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+
+#Connection Strings file
+connectionStrings.config
+
+#Everything in App_Data
+App_Data/
