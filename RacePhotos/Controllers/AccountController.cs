@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using WebMatrix.WebData;
 using RacePhotos.Filters;
-using RacePhotos.Models;
+using PhotoServer.Domain;
 
 namespace RacePhotos.Controllers
 {

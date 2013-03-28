@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
-using RacePhotos.Models;
+using PhotoServer.DataAccessLayer;
 
 namespace RacePhotos.Filters
 {
