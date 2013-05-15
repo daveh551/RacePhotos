@@ -29,7 +29,8 @@ namespace RacePhotos.DependencyResolution {
                                         scan.WithDefaultConventions();
                                     });
             //                x.For<IExample>().Use<Example>();
-	                        x.For<IPhotoDataSource>().Use<EFPhotoServerDataSource>();
+	                        x.For<IPhotoDataSource>()
+								.Use( () => new EFPhotoServerDataSource("DefaultConnection"));
                         });
             return ObjectFactory.Container;
         }
