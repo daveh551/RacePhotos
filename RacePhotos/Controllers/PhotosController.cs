@@ -21,10 +21,11 @@ namespace RacePhotos.Controllers
         {
 	        var race = (string) Session["race"];
 	        var station = (string) Session["station"];
-			if (string.IsNullOrEmpty(race) || string.IsNullOrEmpty(station))
-			{
-				return RedirectToAction("List", "RacesController");
-			}
+			//if (string.IsNullOrEmpty(race) || string.IsNullOrEmpty(station))
+			//{
+			//	return RedirectToAction("List", "Races");
+			//}
+	        ViewBag.RaceTitle = "Run For The Next Generation 5K";
             return View();
         }
 

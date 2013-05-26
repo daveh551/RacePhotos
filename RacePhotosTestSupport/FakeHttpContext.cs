@@ -2,19 +2,39 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using Moq;
 using System.Web.SessionState;
 
 namespace RacePhotosTestSupport
 {
 	public class FakeHttpContext : HttpContextBase
 	{
+		public FakeHttpContext()
+		{
+
+			var mockIdentity = new Mock<IIdentity>();
+				mockIdentity.SetupGet(id => id.Name)
+				.Returns("FinishLineAdmin");
+				IIdentity identity = mockIdentity.Object;
+			_user = new ClaimsPrincipal(identity);
+		}
 		private HttpSessionStateBase _session = new FakeSession();
 		public override HttpServerUtilityBase Server
 		{
 			get { return new FakeHttpServerUtility(); }
+		}
+
+		private IPrincipal _user;
+
+		public override System.Security.Principal.IPrincipal User
+		{
+			get { return _user; }
 		}
 
 		public override HttpSessionStateBase Session
