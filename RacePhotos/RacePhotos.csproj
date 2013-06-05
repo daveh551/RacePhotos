@@ -147,6 +147,7 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PhotographersController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\RacesController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
@@ -157,7 +158,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaceDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap-responsive.css" />
@@ -282,6 +282,12 @@
     <Content Include="Views\Races\Details.cshtml" />
     <Content Include="Views\Races\Index.cshtml" />
     <Content Include="Views\Races\_CreateOrEdit.cshtml" />
+    <Content Include="Views\Photographers\Create.cshtml" />
+    <Content Include="Views\Photographers\Edit.cshtml" />
+    <Content Include="Views\Photographers\Delete.cshtml" />
+    <Content Include="Views\Photographers\Details.cshtml" />
+    <Content Include="Views\Photographers\Index.cshtml" />
+    <Content Include="Views\Photographers\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,8 @@ namespace PhotoServer.DataAccessLayer
         IQueryable<T> FindAll();
         T FindById(TKey id);
         IQueryable<T> Find(Func<T, bool> predicate);
-       
+	    void AddOrUpdate(T item);
+
 
     }
 }

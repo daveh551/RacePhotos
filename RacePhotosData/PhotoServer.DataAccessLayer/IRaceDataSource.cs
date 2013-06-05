@@ -7,10 +7,11 @@ using PhotoServer.Domain;
 
 namespace PhotoServer.DataAccessLayer
 {
-	public interface IRaceDataSource
+	public interface IRaceDataSource : IDisposable
 	{
 		IRepository<Race, int> Races { get; }
 		IRepository<Event, int> Events { get; }
-		IRepository<Distance, int> Distances { get;  } 
+		IRepository<Distance, int> Distances { get;  }
+		int SaveChanges();
 	}
 }

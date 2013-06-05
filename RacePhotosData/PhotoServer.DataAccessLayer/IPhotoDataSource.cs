@@ -7,7 +7,7 @@ using PhotoServer.Domain;
 
 namespace PhotoServer.DataAccessLayer
 {
-    public interface IPhotoDataSource
+    public interface IPhotoDataSource : IDisposable
     {
         IRepository<Photo, Guid> Photos { get; }
 		IRepository<Event, int> Events { get; }

@@ -50,5 +50,10 @@ namespace PhotoServer.DataAccessLayer
 			
 		}
 
+
+
+		public void AddOrUpdate(T item)
+		{
+		}
 	}
 }

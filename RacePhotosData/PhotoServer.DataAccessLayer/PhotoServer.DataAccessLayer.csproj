@@ -76,6 +76,7 @@
     <Compile Include="AbstractRepository.cs" />
     <Compile Include="DistanceRepository.cs" />
     <Compile Include="EventRepository.cs" />
+    <Compile Include="IPhotographerDataSource.cs" />
     <Compile Include="IRaceDataSource.cs" />
     <Compile Include="IPhotoDataSource.cs" />
     <Compile Include="IReferenceRepository.cs" />
@@ -103,7 +104,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PhotoDataRepository.cs" />
     <Compile Include="EFPhotoServerDataSource.cs" />
+    <Compile Include="PhotographerDataSource.cs" />
     <Compile Include="PhotographerReferenceRepository.cs" />
+    <Compile Include="PhotographerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceDataSource.cs" />
     <Compile Include="RaceRepository.cs" />

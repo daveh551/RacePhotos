@@ -12,14 +12,19 @@ namespace RacePhotos.Controllers
 {   
     public class PhotographersController : Controller
     {
-        private PhotographerDataSource context = new PhotographerDataSource();
+	    private IPhotographerDataSource context;
+
+	    public PhotographersController(IPhotographerDataSource context)
+	    {
+		    this.context = context;
+	    }
 
         //
         // GET: /Photographers/
 
         public ViewResult Index()
         {
-            return View(context.Photographers.ToList());
+            return View(context.Photographers.FindAll().ToList());
         }
 
         //
@@ -27,7 +32,7 @@ namespace RacePhotos.Controllers
 
         public ViewResult Details(int id)
         {
-            Photographer photographer = context.Photographers.Single(x => x.Id == id);
+	        Photographer photographer = context.Photographers.FindById(id);
             return View(photographer);
         }
 
@@ -60,7 +65,7 @@ namespace RacePhotos.Controllers
  
         public ActionResult Edit(int id)
         {
-            Photographer photographer = context.Photographers.Single(x => x.Id == id);
+	        Photographer photographer = context.Photographers.FindById(id);
             return View(photographer);
         }
 
@@ -84,7 +89,7 @@ namespace RacePhotos.Controllers
  
         public ActionResult Delete(int id)
         {
-            Photographer photographer = context.Photographers.Single(x => x.Id == id);
+	        Photographer photographer = context.Photographers.FindById(id);
             return View(photographer);
         }
 
@@ -94,7 +99,7 @@ namespace RacePhotos.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Photographer photographer = context.Photographers.Single(x => x.Id == id);
+	        Photographer photographer = context.Photographers.FindById(id);
             context.Photographers.Remove(photographer);
             context.SaveChanges();
             return RedirectToAction("Index");

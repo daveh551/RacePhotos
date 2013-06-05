@@ -13,14 +13,19 @@ namespace RacePhotos.Controllers
 {   
     public class RacesController : Controller
     {
-        private IRaceDataSource context = new RaceDataSource();
+	    private IRaceDataSource context;
+
+	    public RacesController(IRaceDataSource context)
+	    {
+		    this.context = context;
+	    }
 
         //
         // GET: /Races/
 
         public ViewResult Index()
         {
-            return View(context.Races.Include(race => race.Event).Include(race => race.Distance).ToList());
+            return View(context.Races.FindAll().Include(race => race.Distance).ToList());
         }
 
         //
@@ -28,7 +33,7 @@ namespace RacePhotos.Controllers
 
         public ViewResult Details(int id)
         {
-            Race race = context.Races.Single(x => x.Id == id);
+	        Race race = context.Races.FindById(id);
             return View(race);
         }
 
@@ -65,7 +70,7 @@ namespace RacePhotos.Controllers
  
         public ActionResult Edit(int id)
         {
-            Race race = context.Races.Single(x => x.Id == id);
+	        Race race = context.Races.FindById(id);
             ViewBag.PossibleEvents = context.Events;
             ViewBag.PossibleDistances = context.Distances;
             return View(race);
@@ -79,7 +84,7 @@ namespace RacePhotos.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(race).State = EntityState.Modified;
+	            context.Races.AddOrUpdate(race);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -93,7 +98,7 @@ namespace RacePhotos.Controllers
  
         public ActionResult Delete(int id)
         {
-            Race race = context.Races.Single(x => x.Id == id);
+	        Race race = context.Races.FindById(id);
             return View(race);
         }
 
@@ -103,7 +108,7 @@ namespace RacePhotos.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Race race = context.Races.Single(x => x.Id == id);
+	        Race race = context.Races.FindById(id);
             context.Races.Remove(race);
             context.SaveChanges();
             return RedirectToAction("Index");
