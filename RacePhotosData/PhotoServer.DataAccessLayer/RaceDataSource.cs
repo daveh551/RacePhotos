@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,12 @@ namespace PhotoServer.DataAccessLayer
 			_distanceDataSet = Set<Distance>();
 			_distanceData = new DistanceRepository(_distanceDataSet);
 
+		}
+
+
+		public void Update(object item)
+		{
+			Entry(item).State = EntityState.Modified;
 		}
 	}
 }

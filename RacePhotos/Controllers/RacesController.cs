@@ -84,7 +84,7 @@ namespace RacePhotos.Controllers
         {
             if (ModelState.IsValid)
             {
-	            context.Races.AddOrUpdate(race);
+	            context.Update(race);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }

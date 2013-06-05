@@ -76,6 +76,7 @@
     <Compile Include="AbstractRepository.cs" />
     <Compile Include="DistanceRepository.cs" />
     <Compile Include="EventRepository.cs" />
+    <Compile Include="IDataSource.cs" />
     <Compile Include="IPhotographerDataSource.cs" />
     <Compile Include="IRaceDataSource.cs" />
     <Compile Include="IPhotoDataSource.cs" />

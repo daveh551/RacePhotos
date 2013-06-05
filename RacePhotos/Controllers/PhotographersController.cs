@@ -77,7 +77,7 @@ namespace RacePhotos.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(photographer).State = EntityState.Modified;
+	            context.Update(photographer);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
