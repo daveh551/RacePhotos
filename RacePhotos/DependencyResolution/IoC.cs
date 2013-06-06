@@ -33,6 +33,8 @@ namespace RacePhotos.DependencyResolution {
 								.Use( () => new EFPhotoServerDataSource("DefaultConnection"));
 	                        x.For<IRaceDataSource>()
 	                         .Use(() => new RaceDataSource("DefaultConnection"));
+                            x.For<IPhotographerDataSource>()
+                             .Use(() => new PhotographerDataSource("DefaultConnection"));
                         });
             return ObjectFactory.Container;
         }
