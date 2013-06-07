@@ -5,13 +5,13 @@ namespace PhotoServer.DataAccessLayer.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class AddShortFieldsToPhotos : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddShortFieldsToPhotos));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201305252119485_AddShortFieldsToPhotos"; }
+            get { return "201306070959370_Initial"; }
         }
         
         string IMigrationMetadata.Source

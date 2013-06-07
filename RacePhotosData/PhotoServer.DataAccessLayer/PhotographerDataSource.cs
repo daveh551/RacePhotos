@@ -28,6 +28,7 @@ namespace PhotoServer.DataAccessLayer
 		{
 			_photographerDataSet = Set<Photographer>();
 			_photographerData = new PhotographerRepository(_photographerDataSet);
+			Database.SetInitializer(new CreateDatabaseIfNotExists<PhotographerDataSource>());
 
 		}
 
