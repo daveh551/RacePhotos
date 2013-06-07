@@ -20,6 +20,10 @@ namespace PhotoServer.DataAccessLayer
 			get { return _photographerData; }
 		}
 
+		public PhotographerDataSource() : this ("DefaultConnection")
+		{
+			
+		}
 		public PhotographerDataSource(string connectionString) : base(connectionString)
 		{
 			_photographerDataSet = Set<Photographer>();

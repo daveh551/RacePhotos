@@ -7,9 +7,9 @@ namespace PhotoServer.DataAccessLayer.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PhotoServer.DataAccessLayer.EFPhotoServerDataSource>
+    internal sealed class PhotoServerConfiguration : DbMigrationsConfiguration<PhotoServer.DataAccessLayer.EFPhotoServerDataSource>
     {
-        public Configuration()
+        public PhotoServerConfiguration()
         {
             AutomaticMigrationsEnabled = true;
         }
