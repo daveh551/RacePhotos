@@ -77,25 +77,19 @@
     <Compile Include="DistanceRepository.cs" />
     <Compile Include="EventRepository.cs" />
     <Compile Include="IDataSource.cs" />
-    <Compile Include="IPhotographerDataSource.cs" />
-    <Compile Include="IRaceDataSource.cs" />
     <Compile Include="IPhotoDataSource.cs" />
     <Compile Include="IReferenceRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="MasterDBContext.cs" />
-    <Compile Include="Migrations\201306070959370_Initial.cs" />
-    <Compile Include="Migrations\201306070959370_Initial.Designer.cs">
-      <DependentUpon>201306070959370_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201306080002451_Initial.cs" />
+    <Compile Include="Migrations\201306080002451_Initial.Designer.cs">
+      <DependentUpon>201306080002451_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PhotoDataRepository.cs" />
     <Compile Include="EFPhotoServerDataSource.cs" />
-    <Compile Include="PhotographerDataSource.cs" />
     <Compile Include="PhotographerReferenceRepository.cs" />
     <Compile Include="PhotographerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaceDataSource.cs" />
-    <Compile Include="RaceRepository.cs" />
     <Compile Include="Storage\AzureStorageProvider.cs" />
     <Compile Include="Storage\FileStorageProvider.cs" />
     <Compile Include="Storage\IStorageProvider.cs" />
@@ -112,8 +106,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306070959370_Initial.resx">
-      <DependentUpon>201306070959370_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201306080002451_Initial.resx">
+      <DependentUpon>201306080002451_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

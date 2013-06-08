@@ -19,7 +19,7 @@ namespace RacePhotos.Controllers
 
         public ActionResult List()
         {
-	        var race = (string) Session["race"];
+	        var race = (string) Session["event"];
 	        var station = (string) Session["station"];
 			//if (string.IsNullOrEmpty(race) || string.IsNullOrEmpty(station))
 			//{

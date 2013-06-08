@@ -11,7 +11,7 @@ namespace PhotoServer.DataAccessLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201306070959370_Initial"; }
+            get { return "201306080002451_Initial"; }
         }
         
         string IMigrationMetadata.Source

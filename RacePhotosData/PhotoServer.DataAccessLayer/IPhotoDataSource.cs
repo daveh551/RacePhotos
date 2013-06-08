@@ -12,7 +12,6 @@ namespace PhotoServer.DataAccessLayer
         IRepository<Photo, Guid> Photos { get; }
 		IRepository<Event, int> Events { get; }
 		IRepository<Distance, int> Distances { get; }
-		IRepository<Race, int> Races { get; }
-		IReferenceRepository<Photographer, int> Photographers {get;}
+		IRepository<Photographer, int> Photographers {get;}
     }
 }

@@ -149,7 +149,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhotographersController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
-    <Compile Include="Controllers\RacesController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -276,12 +275,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Photos\List.cshtml" />
-    <Content Include="Views\Races\Create.cshtml" />
-    <Content Include="Views\Races\Edit.cshtml" />
-    <Content Include="Views\Races\Delete.cshtml" />
-    <Content Include="Views\Races\Details.cshtml" />
-    <Content Include="Views\Races\Index.cshtml" />
-    <Content Include="Views\Races\_CreateOrEdit.cshtml" />
     <Content Include="Views\Photographers\Create.cshtml" />
     <Content Include="Views\Photographers\Edit.cshtml" />
     <Content Include="Views\Photographers\Delete.cshtml" />

@@ -12,9 +12,9 @@ namespace RacePhotos.Controllers
 {   
     public class PhotographersController : Controller
     {
-	    private IPhotographerDataSource context;
+	    private IPhotoDataSource context;
 
-	    public PhotographersController(IPhotographerDataSource context)
+	    public PhotographersController(IPhotoDataSource context)
 	    {
 		    this.context = context;
 	    }
