@@ -10,98 +10,99 @@ using PhotoServer.DataAccessLayer;
 
 namespace RacePhotos.Controllers
 {   
-	[Authorize(Roles = "admin")]
-    public class PhotographersController : Controller
+    public class EventsController : Controller
     {
-	    private IPhotoDataSource context;
-
-	    public PhotographersController(IPhotoDataSource context)
-	    {
-		    this.context = context;
-	    }
+        private EFPhotoServerDataSource context = new EFPhotoServerDataSource();
 
         //
-        // GET: /Photographers/
+        // GET: /Events/
 
         public ViewResult Index()
         {
-            return View(context.Photographers.FindAll().ToList());
+            return View(context.Events.FindAll().ToList());
         }
 
         //
-        // GET: /Photographers/Details/5
+        // GET: /Events/Details/5
 
         public ViewResult Details(int id)
         {
-	        Photographer photographer = context.Photographers.FindById(id);
-            return View(photographer);
+            Event @event = context.Events.FindById(id);
+            return View(@event);
         }
 
         //
-        // GET: /Photographers/Create
+        // GET: /Events/Create
 
+		[Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
         } 
 
         //
-        // POST: /Photographers/Create
+        // POST: /Events/Create
 
         [HttpPost]
-        public ActionResult Create(Photographer photographer)
+		[Authorize(Roles = "admin")]
+        public ActionResult Create(Event @event)
         {
             if (ModelState.IsValid)
             {
-                context.Photographers.Add(photographer);
+                context.Events.Add(@event);
                 context.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            return View(photographer);
+            return View(@event);
         }
         
         //
-        // GET: /Photographers/Edit/5
+        // GET: /Events/Edit/5
  
+		[Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
-	        Photographer photographer = context.Photographers.FindById(id);
-            return View(photographer);
+            Event @event = context.Events.FindById(id);
+            return View(@event);
         }
 
         //
-        // POST: /Photographers/Edit/5
+        // POST: /Events/Edit/5
 
+		[Authorize(Roles = "admin")]
         [HttpPost]
-        public ActionResult Edit(Photographer photographer)
+        public ActionResult Edit(Event @event)
         {
             if (ModelState.IsValid)
             {
-	            context.Update(photographer);
+                context.Update(@event);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(photographer);
+            return View(@event);
         }
 
         //
-        // GET: /Photographers/Delete/5
+        // GET: /Events/Delete/5
  
+		
+		[Authorize(Roles = "admin")]
         public ActionResult Delete(int id)
         {
-	        Photographer photographer = context.Photographers.FindById(id);
-            return View(photographer);
+            Event @event = context.Events.FindById(id);
+            return View(@event);
         }
 
         //
-        // POST: /Photographers/Delete/5
+        // POST: /Events/Delete/5
 
+		[Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-	        Photographer photographer = context.Photographers.FindById(id);
-            context.Photographers.Remove(photographer);
+            Event @event = context.Events.FindById(id);
+            context.Events.Remove(@event);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
